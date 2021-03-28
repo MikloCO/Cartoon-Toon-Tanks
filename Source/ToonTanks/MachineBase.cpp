@@ -23,6 +23,17 @@ AMachineBase::AMachineBase()
 	ProjectileSpawnPoint->SetupAttachment(TurrentMesh);
 
 }
+
+void AMachineBase::RotateTurrentFunction(FVector LookAtTarget) {
+	
+	FVector LookAtTargetCleaned = FVector(LookAtTarget.X, LookAtTarget.Y, TurrentMesh->GetComponentLocation().Z);
+	FVector StartLocation = TurrentMesh->GetComponentLocation();
+
+	FRotator TurretRotation = FVector(LookAtTargetCleaned - StartLocation).Rotation();
+	TurrentMesh->SetWorldRotation(TurretRotation);
+
+}
+
 void AMachineBase::Fire() {
 
 }
