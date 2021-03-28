@@ -22,9 +22,14 @@ AMachineBase::AMachineBase()
 	ProjectileSpawnPoint = CreateDefaultSubobject<USceneComponent>(TEXT("Projectile Spawn Point"));
 	ProjectileSpawnPoint->SetupAttachment(TurrentMesh);
 
-
+}
+void AMachineBase::Fire() {
 
 }
+void AMachineBase::HandleDestruction() {
+
+}
+
 
 
 
